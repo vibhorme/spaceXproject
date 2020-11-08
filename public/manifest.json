@@ -1,11 +1,11 @@
 {
-  "name": "next-pwa",
-  "short_name": "next-pwa",
+  "name": "spaceproject",
+  "short_name": "spaceproject",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
-  "start_url": "",
+  "start_url": "/",
   "icons": [
     {
       "src": "/icons/android-chrome-192x192.png",
