@@ -137,11 +137,12 @@ const Filters: React.FC<FilterProps> = ({ selected }: FilterProps) => {
           </Text>
         </Card>
         <Flex justifyContent="space-between" padding="9px 0px" flexWrap="wrap">
-          {launchYear.map((item) => {
+          {launchYear.map((item, index) => {
             return (
               <Button
                 isActive={item.isChecked}
                 onClick={() => handleOnClick(item.year)}
+                key={index}
               >
                 <Text fontSize="h6" fontWeight="regular" stringColor="#26341F">
                   {item.year}

@@ -95,8 +95,8 @@ export default function Home() {
             <Flex alignItem="stretch" padding="0px 0px 0px 8px" flexWrap="wrap">
               {detail ? (
                 <>
-                  {detail.map((item) => {
-                    return <Detail detail={item} />;
+                  {detail.map((item, index) => {
+                    return <Detail detail={item} key={index} />;
                   })}
                 </>
               ) : null}
