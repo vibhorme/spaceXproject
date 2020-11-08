@@ -51,26 +51,16 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#000000" />
 
           <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/static/icons/apple-touch-icon.png"
-          />
-          <link
             rel="icon"
             type="image/png"
-            sizes="32x32"
-            href="/static/icons/favicon-32x32.png"
+            sizes="512x512"
+            href="/icons/icon-512x512.png"
           />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/static/icons/favicon-16x16.png"
-          />
+
           <link rel="manifest" href="/manifest.json" />
           <link
             rel="mask-icon"
-            href="/icons/safari-pinned-tab.svg"
+            href="/icons/icon-512x512.png"
             color="#5bbad5"
           />
           <link rel="shortcut icon" href="/icons/favicon.ico" />
