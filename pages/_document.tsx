@@ -37,18 +37,12 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta name="spacexproject" content="PWA App" />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="default"
-          />
           <meta name="apple-mobile-web-app-title" content="PWA App" />
           <meta
             name="description"
             content="app to show details about spacexproject"
           />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta name="theme-color" content="#000000" />
 
           <link
             rel="icon"
@@ -64,10 +58,6 @@ export default class MyDocument extends Document {
             color="#5bbad5"
           />
           <link rel="shortcut icon" href="/icons/favicon.ico" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-          />
         </Head>
         <body>
           <Main />
