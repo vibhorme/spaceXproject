@@ -145,6 +145,7 @@ const Text: React.SFC<TextProps> = ({ children, ...props }: TextProps) => {
       wordBreak={props.wordBreak}
       stringColor={props.stringColor}
       margin={props.margin}
+      {...props}
     >
       {children}
     </TextStyled>
