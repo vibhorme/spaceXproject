@@ -44,7 +44,11 @@ export default function Home() {
     isSuccessfulLanding: false,
   });
 
-  const searchDetail = async (launchSuccess, landSuccess, year) => {
+  const searchDetail = async (
+    launchSuccess: boolean,
+    landSuccess: boolean,
+    year: string
+  ) => {
     setIsLoading(true);
     try {
       const { data } = await axios({

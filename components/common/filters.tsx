@@ -87,23 +87,13 @@ const Filters: React.FC<FilterProps> = ({ selected }: FilterProps) => {
       isChecked: false,
     },
   ];
-  const isSuccessfulLaunchObj = [
-    {
-      label: 'true',
-      isChecked: false,
-    },
-    {
-      label: 'false',
-      isChecked: false,
-    },
-  ];
 
   const [launchYear, setLaunchYear] = React.useState(obj);
   const [year, setYear] = React.useState('');
   const [isSuccessfulLaunch, setIsSuccessfulLaunch] = React.useState(false);
   const [isSuccessfulLanding, setIsSuccessfulLanding] = React.useState(false);
 
-  const handleOnClick = (id) => {
+  const handleOnClick = ({ id }: any) => {
     const selectedLaunchYear = launchYear.map((item) => {
       if (id === item.year) {
         item.isChecked = !item.isChecked;

@@ -19,11 +19,15 @@ border-radius: 5px;
  }
  
 `;
-const Button: React.FC<ButtonProps> = ({ isActive, ...props }: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({
+  isActive,
+  onClick,
+  ...props
+}: ButtonProps) => {
   const [isActiveButton, setIsActiveButton] = React.useState(isActive);
   const handleOnClick = () => {
     setIsActiveButton(!isActiveButton);
-    props.onClick();
+    onClick();
   };
   return (
     <ButtonStyled

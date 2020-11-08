@@ -54,7 +54,7 @@ const Detail: React.FC<DetailProps> = ({ detail }: DetailProps) => {
         </Text>
         {detail.mission_id.length ? (
           <ul style={{ margin: '0px' }}>
-            {detail.mission_id.map((item) => {
+            {detail.mission_id.map(({ item }: any) => {
               return <MissionIdList> {item} </MissionIdList>;
             })}
           </ul>
