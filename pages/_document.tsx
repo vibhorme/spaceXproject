@@ -46,6 +46,7 @@ export default class MyDocument extends Document {
           <meta name="description" content="pwa spaceproject application" />
           <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
+          <meta name="theme-color" content="#000" />
           <link rel="apple-touch-icon" href="/example.png" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="pwa spaceproject application" />
