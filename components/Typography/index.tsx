@@ -147,6 +147,7 @@ const Text: React.SFC<TextProps> = ({ children, ...props }: TextProps) => {
       margin={props.margin}
       textTransform={props.textTransform}
       textAlign={props.textAlign}
+      padding={props.padding}
     >
       {children}
     </TextStyled>

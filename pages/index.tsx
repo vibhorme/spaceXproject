@@ -98,7 +98,7 @@ export default function Home() {
       <Text
         fontSize="h4"
         fontWeight="bold"
-        padding="22px"
+        padding="22px 9px 15px"
         stringColor="#191919"
       >
         SpaceEx Lauch Program
@@ -113,8 +113,9 @@ export default function Home() {
             });
           }}
         />
-        {!isLoading ? (
-          <DetailStyled>
+
+        <DetailStyled>
+          {!isLoading ? (
             <Flex alignItem="stretch" padding="0px 0px 0px 8px" flexWrap="wrap">
               {detail ? (
                 <>
@@ -124,12 +125,12 @@ export default function Home() {
                 </>
               ) : null}
             </Flex>
-          </DetailStyled>
-        ) : (
-          <Flex justifyContent="center" padding="42px 0px 0px 0px" width="80%">
-            <Spinner type="primary" />
-          </Flex>
-        )}
+          ) : (
+            <Flex justifyContent="center" padding="42px 0px 0px 0px">
+              <Spinner type="primary" />
+            </Flex>
+          )}
+        </DetailStyled>
       </Flex>
     </PageStyled>
   );

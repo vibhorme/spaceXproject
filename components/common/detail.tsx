@@ -21,7 +21,7 @@ const DetailStyled = styled.div`
 `;
 const MissionIdList = styled.li`
   ::marker {
-    color: #4f5191; /* Change the color */
+    color: #4f5191;
   }
 `;
 const Detail: React.FC<DetailProps> = ({ detail }: DetailProps) => {
@@ -54,8 +54,8 @@ const Detail: React.FC<DetailProps> = ({ detail }: DetailProps) => {
         </Text>
         {detail.mission_id.length ? (
           <ul style={{ margin: '0px' }}>
-            {detail.mission_id.map(({ item }: any) => {
-              return <MissionIdList> {item} </MissionIdList>;
+            {detail.mission_id.map((item: React.ReactNode, index: number) => {
+              return <MissionIdList key={index}> {item} </MissionIdList>;
             })}
           </ul>
         ) : (

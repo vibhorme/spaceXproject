@@ -15,7 +15,7 @@ max-width: 200px;
 `;
 export interface FilterProps {
   selected: (
-    year: string,
+    year: any,
     isSuccessfulLaunch: any,
     isSuccessfulLanding: any
   ) => void;
@@ -89,13 +89,13 @@ const Filters: React.FC<FilterProps> = ({ selected }: FilterProps) => {
   ];
 
   const [launchYear, setLaunchYear] = React.useState(obj);
-  const [year, setYear] = React.useState('');
+  const [selectedYear, setSelectedYear] = React.useState('');
   const [isSuccessfulLaunch, setIsSuccessfulLaunch] = React.useState(false);
   const [isSuccessfulLanding, setIsSuccessfulLanding] = React.useState(false);
 
-  const handleOnClick = ({ id }: any) => {
+  const handleOnClick = (year: React.SetStateAction<string>) => {
     const selectedLaunchYear = launchYear.map((item) => {
-      if (id === item.year) {
+      if (year === item.year) {
         item.isChecked = !item.isChecked;
 
         return item;
@@ -106,12 +106,13 @@ const Filters: React.FC<FilterProps> = ({ selected }: FilterProps) => {
     });
 
     setLaunchYear(selectedLaunchYear);
-    if (year === id) {
-      setYear('');
+
+    if (selectedYear === year) {
+      setSelectedYear('');
       selected('', isSuccessfulLaunch, isSuccessfulLanding);
     } else {
-      setYear(id);
-      selected(id, isSuccessfulLaunch, isSuccessfulLanding);
+      setSelectedYear(year);
+      selected(year, isSuccessfulLaunch, isSuccessfulLanding);
     }
   };
 
@@ -141,7 +142,9 @@ const Filters: React.FC<FilterProps> = ({ selected }: FilterProps) => {
             return (
               <Button
                 isActive={item.isChecked}
-                onClick={() => handleOnClick(item.year)}
+                onClick={() => {
+                  handleOnClick(item.year);
+                }}
                 key={index}
               >
                 <Text fontSize="h6" fontWeight="regular" stringColor="#26341F">
@@ -166,27 +169,41 @@ const Filters: React.FC<FilterProps> = ({ selected }: FilterProps) => {
             Successful Launch
           </Text>
         </Card>
-        <Flex justifyContent="space-between" padding="9px 0px" flexWrap="wrap">
+        <Flex flexWrap="wrap" padding="0px 0px 9px 0px">
           <Button
             isActive={isSuccessfulLaunch}
             onClick={() => {
               setIsSuccessfulLaunch(true);
-              selected(year, true, isSuccessfulLanding);
+              selected(selectedYear, true, isSuccessfulLanding);
             }}
+            margin="9px 22px 0px 0px"
+            width="66px"
           >
-            <Text fontSize="h6" fontWeight="regular" stringColor="#26341F">
-              true
+            <Text
+              fontSize="h6"
+              fontWeight="regular"
+              stringColor="#26341F"
+              textAlign="center"
+            >
+              True
             </Text>
           </Button>
           <Button
             isActive={!isSuccessfulLaunch}
             onClick={() => {
               setIsSuccessfulLaunch(false);
-              selected(year, false, isSuccessfulLanding);
+              selected(selectedYear, false, isSuccessfulLanding);
             }}
+            margin="9px 0px 0px"
+            width="66px"
           >
-            <Text fontSize="h6" fontWeight="regular" stringColor="#26341F">
-              false
+            <Text
+              fontSize="h6"
+              fontWeight="regular"
+              stringColor="#26341F"
+              textAlign="center"
+            >
+              False
             </Text>
           </Button>
         </Flex>
@@ -205,27 +222,41 @@ const Filters: React.FC<FilterProps> = ({ selected }: FilterProps) => {
             Successful Landing
           </Text>
         </Card>
-        <Flex justifyContent="space-between" padding="9px 0px" flexWrap="wrap">
+        <Flex flexWrap="wrap" padding="9px 0px 0px">
           <Button
             isActive={isSuccessfulLanding}
             onClick={() => {
               setIsSuccessfulLanding(true);
-              selected(year, isSuccessfulLaunch, true);
+              selected(selectedYear, isSuccessfulLaunch, true);
             }}
+            margin="9px 22px 0px 0px"
+            width="66px"
           >
-            <Text fontSize="h6" fontWeight="regular" stringColor="#26341F">
-              true
+            <Text
+              fontSize="h6"
+              fontWeight="regular"
+              stringColor="#26341F"
+              textAlign="center"
+            >
+              True
             </Text>
           </Button>
           <Button
             isActive={!isSuccessfulLanding}
             onClick={() => {
               setIsSuccessfulLanding(false);
-              selected(year, isSuccessfulLaunch, false);
+              selected(selectedYear, isSuccessfulLaunch, false);
             }}
+            margin="9px 0px 0px"
+            width="66px"
           >
-            <Text fontSize="h6" fontWeight="regular" stringColor="#26341F">
-              false
+            <Text
+              fontSize="h6"
+              fontWeight="regular"
+              stringColor="#26341F"
+              textAlign="center"
+            >
+              False
             </Text>
           </Button>
         </Flex>
